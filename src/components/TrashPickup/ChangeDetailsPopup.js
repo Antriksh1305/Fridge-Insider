@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Modal, TouchableWithoutFeedback } from 'react-native';
 import { MotiPressable } from 'moti/interactions';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import { Colors } from '../../constants/Colors';
 import * as Screen from '../../constants/Screen';
 
 //components
 import InputBox from './InputBox';
+import Svginserter from '../shared/Svginserter';
 
 const width = Screen.SCREEN_WIDTH;
 const height = Screen.SCREEN_HEIGHT;
@@ -31,7 +31,10 @@ const ChangeDetailsPopup = (props) => {
                         <View style={styles.popupHeader}>
                             <Text style={styles.popupTitle}>Change Details</Text>
                             <TouchableOpacity style={styles.cancelButton} onPress={props.onCancel}>
-                                <AntDesign name="close" size={24} color={Colors.palette_secondary} style={{ opacity: 0.45 }} />
+                                {/* <AntDesign name="close" size={24} color={Colors.palette_secondary} style={{ opacity: 0.45 }} /> */}
+                                <View style={styles.MenuBox}>
+                                  <Svginserter tag={'MenuClose2'} />
+                                </View>
                             </TouchableOpacity>
                         </View>
                         <View style={styles.popupContent}>
@@ -77,6 +80,14 @@ const styles = StyleSheet.create({
         paddingTop: height / 39.65,
         paddingHorizontal: width / 19.55,
         paddingBottom: height / 19.825,
+    },
+    MenuBox: {
+        position: 'relative',
+        top: height / 100,
+        left: width / 30,
+        width: width / 11.2,
+        height: height / 22.65,
+        color:'black'
     },
     popupHeader: {
         flexDirection: 'row',
