@@ -353,16 +353,16 @@ const styles = StyleSheet.create({
         // backgroundColor:'blue'
     },
     button: {
-        backgroundColor: 'white',
+        // backgroundColor: '#5783',
         height: 30,
         paddingHorizontal: 10,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        borderBottomColor: 'black',
+        borderColor: 'black',
         borderBottomWidth: 1.2,
-        shadowColor: 'black',
-        elevation: 10
+        // shadowColor: 'black',
+        // elevation: 10
     },
     Sectiondivider: {
         width: 1,

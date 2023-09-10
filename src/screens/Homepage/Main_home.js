@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   Main_homeShadow: {
-    height: height - height / 9.9,
+    height: height - height / 12,
     position: 'absolute',
-    top: height / 14.42,
+    top: height / 40,
     left: 0,
     right: 0,
     bottom: 0,
-    borderRadius: 50,
+    borderRadius: 40,
     backgroundColor: 'rgba(255,255,255,0.32)',
   },
   menucontainer: {
