@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { Animated, StyleSheet, StatusBar, Text, View, TouchableOpacity, Image } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, { useState } from 'react';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import HomeNavigator from '../../navigators/HomeNavigator';
 import Drawer from '../drawer';
 import Svginserter from '../../components/shared/Svginserter';
@@ -7,7 +8,6 @@ import { MotiView } from 'moti';
 import * as Screen from '../../constants/Screen';
 import Data1 from '../../Context/Data1';
 import Data2 from '../../Context/Data2';
-// import menus from '../../components/shared/temp_data';
 
 const width = Screen.SCREEN_WIDTH;
 const height = Screen.SCREEN_HEIGHT;
@@ -19,7 +19,7 @@ const Main_home = () => {
 
   const Opendrawer = () => {
     setShowMenu(true);
-  }
+  };
 
   return (
     <Data1.Provider value={[gdata,setGdata]}>

@@ -29,7 +29,7 @@ const ForgotPassword = React.memo((props) => {
       return (
             <MotiView style={styles.lowercont} from={{ scale: 0.7, opacity: 0 }} animate={animateStyles3} transition={transitionConfig}>
                   <View style={styles.lowermaincont}>
-                        <TouchableOpacity onPress={() => { props.setForgotpass(false) }}>
+                        <TouchableOpacity onPress={() => { props.setForgotpass(false); }}>
                               <View style={styles.backbtn}>
                                     <View style={{ paddingRight: width / 196 }} >
                                           <Svginserter tag={'Back'} width={width / 14} height={width / 14} />
