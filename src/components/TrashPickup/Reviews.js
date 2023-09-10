@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { AntDesign, FontAwesome } from 'react-native-vector-icons';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import Svginserter from '../shared/Svginserter';
 import { Colors } from '../../constants/Colors';
 import * as Screen from '../../constants/Screen';
 import { reviews } from './temp_data';
@@ -11,10 +12,12 @@ const height = Screen.SCREEN_HEIGHT;
 const Rating = ({ rate }) => {
     const stars = [];
     for (let i = 0; i < rate; i++) {
-        stars.push(<FontAwesome key={`star-${i}`} name="star" size={14} color="#428FD2" style={styles.stars} />);
+        console.log('star');
+        stars.push(<View style={styles.stars} key={`star-${i}`}><Svginserter tag={'Star_filled'} width={14} height={14} /></View>);
     }
     for (let i = 0; i < 5 - rate; i++) {
-        stars.push(<FontAwesome key={`empty-star-${i}`} name="star" size={14} color={Colors.palette_gray_dark} style={styles.stars} />);
+        console.log('empty star');
+        stars.push(<View style={styles.stars} key={`empty-star-${i}`}><Svginserter tag={'Star_empty'} width={14} height={14} /></View>);
     }
     return <View style={styles.ratingBox}>{stars}</View>;
 };
@@ -58,8 +61,8 @@ const Reviews = () => {
         <View style={styles.Review}>
             <View style={styles.ReviewHeader}>
                 <Text style={styles.ReviewHeading}>Ratings and reviews</Text>
-                <TouchableOpacity style={{ marginRight: width / 48.875, opacity: 0.7 }} onPress={() => { console.log('Ratings and Reviews Button Pressed'); }}>
-                    <AntDesign name="arrowright" size={24} color={Colors.palette_secondary} />
+                <TouchableOpacity style={{ marginRight: width / 48.875, opacity: 0.6 }} onPress={() => { console.log('Ratings and Reviews Button Pressed'); }}>
+                    <Image source={require('../../../assets/images/right-arrow.png')} style={{width: 24, height: 24}} />
                 </TouchableOpacity>
             </View>
             <List />

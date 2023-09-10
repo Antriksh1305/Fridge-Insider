@@ -31,7 +31,8 @@ import Heart from '../../../assets/svg/heart';
 import Trash1 from '../../../assets/svg/trash1';
 import Back from '../../../assets/svg/back';
 import Empty_notification from '../../../assets/svg/empty_notification';
-
+import Star_filled from '../../../assets/svg/star_filled';
+import Star_empty from '../../../assets/svg/star_empty';
 class Svginserter extends Component {
       components = {
             Avatars: Avatars,
@@ -64,6 +65,8 @@ class Svginserter extends Component {
             Trash1: Trash1,
             Back: Back,
             Empty_notification: Empty_notification,
+            Star_filled: Star_filled,
+            Star_empty: Star_empty,
       };
       render(...props) {
             const TagName = this.components[this.props.tag];

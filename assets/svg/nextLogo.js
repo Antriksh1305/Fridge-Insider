@@ -1,5 +1,5 @@
-import * as React from "react";
-import Svg, { G, Circle, Path, Defs } from "react-native-svg";
+import * as React from 'react';
+import Svg, { G, Circle, Path, Defs } from 'react-native-svg';
 /* SVGR has dropped some elements not supported by react-native-svg: filter */
 const SVGComponent = (props) => (
       <Svg
@@ -27,7 +27,7 @@ const SVGComponent = (props) => (
                   strokeLinecap="round"
                   strokeLinejoin="round"
             />
-            <Defs></Defs>
+            <Defs />
       </Svg>
 );
 export default SVGComponent;

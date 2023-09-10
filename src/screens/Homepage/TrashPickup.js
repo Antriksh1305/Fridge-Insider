@@ -11,7 +11,7 @@ import PointsDisplay from '../../components/TrashPickup/PointsDisplay';
 import PickupDetails from '../../components/TrashPickup/PickupDetails';
 import ScheduleBtn from '../../components/TrashPickup/ScheduleBtn';
 import Guidelines from '../../components/TrashPickup/Guidelines';
-// import Reviews from '../../components/TrashPickup/Reviews';
+import Reviews from '../../components/TrashPickup/Reviews';
 import ChangeDetailsPopup from '../../components/TrashPickup/ChangeDetailsPopup';
 
 const width = Screen.SCREEN_WIDTH;
@@ -42,7 +42,7 @@ const TrashPickup = (props) => {
                     <ScheduleBtn setHidewrapper={props.setHidewrapper} />
                     <Guidelines />
                 </View>
-                {/* <Reviews /> */}
+                <Reviews />
             </ScrollView>
             <ChangeDetailsPopup
                 isVisible={props.hidewrapper}
