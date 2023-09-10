@@ -1,6 +1,6 @@
-import React from "react";
-import { View, ActivityIndicator, Modal } from "react-native";
-import { Colors } from "../../constants/Colors";
+import React from 'react';
+import { View, ActivityIndicator, Modal } from 'react-native';
+import { Colors } from '../../constants/Colors';
 
 const LoadingModal = ({ loadingModalVisible }) => {
     return (
@@ -9,8 +9,8 @@ const LoadingModal = ({ loadingModalVisible }) => {
                 <ActivityIndicator size="large" color={Colors.palette_secondary} />
             </View>
         </Modal>
-    )
-}
+    );
+};
 
 const styles = {
     modalContainer: {

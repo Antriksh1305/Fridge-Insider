@@ -1,8 +1,8 @@
-import React from "react";
-import { Text, View, TouchableOpacity, TouchableHighlight } from "react-native";
+import React from 'react';
+import { Text, View, TouchableHighlight } from 'react-native';
 
 const Button = React.memo((props) => {
-    console.log("Button Clicked in: " + props.Title);
+    console.log('Button Clicked in: ' + props.Title);
     return (
         <TouchableHighlight style={props.BtnHighlight} onPress={props.handleonPress}>
             <View style={props.BtnBox}>

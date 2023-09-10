@@ -30,7 +30,7 @@ import Bannerillustration from '../../../assets/svg/bannerillustration';
 import Heart from '../../../assets/svg/heart';
 import Trash1 from '../../../assets/svg/trash1';
 import Back from '../../../assets/svg/back';
-import Empty_notification from '../../../assets/svg/empty_notification'; 
+import Empty_notification from '../../../assets/svg/empty_notification';
 
 class Svginserter extends Component {
       components = {
