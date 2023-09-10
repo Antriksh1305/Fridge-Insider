@@ -45,7 +45,8 @@ const Category_List = ({ type1, image1, visible, setVisible}) => {
                 <TouchableOpacity onPress={() => { setVisible(false) }}>
                     <View style={styles.backButton}>
                         {/* <Ionicons name="chevron-back" size={24} color="black" /> */}
-                        <Text>Back</Text>
+                        <Image source={require('../../../assets/images/back1.png')} style={{marginRight:4, width: width/30, height: width/30}} />
+                        <Text style={{fontFamily:'SF-Pro-Rounded-Semibold',}}>Back</Text>
                     </View>
                 </TouchableOpacity>
 
