@@ -49,7 +49,7 @@ export default function ProvideLocation(props) {
                                           </View>
                                     </View>
                                     <View>
-                                          <TouchableHighlight style={styles.ConfirmLocationHighlightBox} onPress={() => { console.log('Confirm Location Button Pressed and rendering the HomePage'); }}>
+                                          <TouchableHighlight style={styles.ConfirmLocationHighlightBox} onPress={() => { props.changeScreen('MainHome'); }}>
                                                 <View style={styles.ConfirmLocationbtnbox}>
                                                       <View>
                                                             <Lottie source={require('../../../assets/animation/lottie_location.json')} autoPlay={true} loop={true} style={styles.LocationLottie} />

@@ -72,7 +72,7 @@ const LocationPage = (props) => {
       return (
             <View style={styles.cont}>
                   <View style={styles.skikbtncont}>
-                        <TouchableOpacity onPress={() => { console.log('Skip Button Pressed'); }}>
+                        <TouchableOpacity onPress={() => { props.changeScreen('MainHome'); }}>
                               <View style={styles.skipbtn}>
                                     <View>
                                           <Text style={styles.skipTxt}>SKIP</Text>
