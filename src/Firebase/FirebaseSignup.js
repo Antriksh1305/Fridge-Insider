@@ -20,7 +20,7 @@ export const registerUserWithEmailAndPassword = async (email, password) => {
     }
 };
 
-export const sendEmailVerification = async (user) => {
+export const sendEmailVerification = async (user,setError) => {
     try {
         if (user) {
             await user.sendEmailVerification();
@@ -39,7 +39,7 @@ const ClearInputFields = (setName, setEmail, setPassword, setConfirmPass) => {
     setEmail('');
     setPassword('');
     setConfirmPass('');
-}
+};
 
 export const handleSignup = async (email, password, name, confirmPass, setName, setEmail, setPassword, setConfirmPass, setLoading, setSuccess, setError, props) => {
     if (email && password && name && confirmPass) {
@@ -53,7 +53,7 @@ export const handleSignup = async (email, password, name, confirmPass, setName, 
                 const response = await registerUserWithEmailAndPassword(email, password);
                 if (response) {
                     await createProfile(response, name, email);
-                    await sendEmailVerification(response.user)
+                    await sendEmailVerification(response.user,setError)
                         .then(() => {
                             ClearInputFields(setName, setEmail, setPassword, setConfirmPass);
                         })

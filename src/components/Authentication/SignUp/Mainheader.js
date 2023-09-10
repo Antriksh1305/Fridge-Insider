@@ -51,6 +51,6 @@ const styles = {
         width: width / 8.68,
         height: width / 8.68,
     },
-}
+};
 
 export default Mainheader;

@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import { Colors } from "../../../constants/Colors";
-import * as Screen from "../../../constants/Screen";
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Colors } from '../../../constants/Colors';
+import * as Screen from '../../../constants/Screen';
 
 //components
 import Button from '../../shared/Button';
@@ -12,8 +12,8 @@ const height = Screen.SCREEN_HEIGHT;
 const Footer = (props) => {
     return (
         <View style={styles.footer}>
-            <Button Title={"Sign-up"} BtnHighlight={styles.btnhighlight} BtnBox={styles.btnbox} BtnTxt={styles.btn} handleonPress={props.Register} />
-            <TouchableOpacity onPress={() => { props.setLogin(true) }}>
+            <Button Title={'Sign-up'} BtnHighlight={styles.btnhighlight} BtnBox={styles.btnbox} BtnTxt={styles.btn} handleonPress={props.Register} />
+            <TouchableOpacity onPress={() => { props.setLogin(true); }}>
                 <View>
                     <Text style={styles.AccAlreadytxt}>Already have{'\n'}Account?
                         <Text style={styles.AccAlreadyLogintxt}> Login</Text>
@@ -61,6 +61,6 @@ const styles = {
         fontFamily: 'SF-Pro-Text-Bold',
         color: Colors.dark_gray,
     },
-}
+};
 
 export default Footer;

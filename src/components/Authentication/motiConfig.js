@@ -8,7 +8,7 @@ export const animateStyles2 = {
 export const animateStyles3 = {
     scale: 1,
     opacity: 1,
-}
+};
 export const transitionConfig = {
     type: 'timing',
     duration: 400,

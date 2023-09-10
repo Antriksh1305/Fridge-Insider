@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput } from 'react-native';
 import Lottie from 'lottie-react-native';
 import { Colors } from '../../constants/Colors';
 import * as Screen from '../../constants/Screen';
@@ -27,11 +27,10 @@ const InputBox = (props) => {
                 placeholder={props.placeholder}
                 keyboardType="email-address"
                 cursorColor={Colors.palette_secondary}
-                autoFocus={false} >
-            </TextInput>
+                autoFocus={false}  />
             </View>
         </View>
-    )
+    );
 };
 
 const styles = {
@@ -60,6 +59,6 @@ const styles = {
         width: width / 16.2,
         height: width / 16.2,
     },
-}
+};
 
 export default InputBox;

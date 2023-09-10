@@ -103,6 +103,6 @@ const styles = {
         position: 'relative',
         right: width / 4.768,
     },
-}
+};
 
 export default Header;
