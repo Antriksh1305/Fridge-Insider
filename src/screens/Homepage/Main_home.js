@@ -12,7 +12,7 @@ import Data2 from '../../Context/Data2';
 const width = Screen.SCREEN_WIDTH;
 const height = Screen.SCREEN_HEIGHT;
 
-const Main_home = () => {
+const Main_home = (props) => {
   const [showMenu, setShowMenu] = useState(false);
   const [gdata, setGdata] = useState([]);
   const [notifydata, setNotifydata] = useState([]);
@@ -25,7 +25,7 @@ const Main_home = () => {
     <Data1.Provider value={[gdata,setGdata]}>
      <Data2.Provider value={[notifydata,setNotifydata]}>
       <View style={{ flex: 1}}>
-        <Drawer setShowMenu={setShowMenu} />
+        <Drawer setShowMenu={setShowMenu} changeScreen={props.changeScreen} />
         <MotiView style={styles.container}
           from={{ scale: 1, translateX: 0 }}
           animate={showMenu ? { scale: 0.75, translateX: width / 1.2 } : { scale: 1, translateX: 0 }}

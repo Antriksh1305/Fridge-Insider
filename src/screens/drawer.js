@@ -7,6 +7,8 @@ import { Colors } from '../constants/Colors';
 const width = Screen.SCREEN_WIDTH;
 const height = Screen.SCREEN_HEIGHT;
 
+import { signOutFromGoogle } from '../Firebase/FirebaseGoogleAuth';
+
 const drawer_list = [
     { icon: require('../../assets/images/avatar1.png'), title: 'Profile' },
     { icon: require('../../assets/images/graph1.png'), title: 'Contribution Graph'},
@@ -27,7 +29,6 @@ const renderItem = ({ item, index }) => {
                 }}
             >
                 <View>
-                    {/* <AntDesign name={item.icon} size={width / 16} color="white" /> */}
                     <Image style={{height:width / 16,width:width / 16}} source={item.icon}/>
                 </View>
                 <View style={styles.ListTitleBox}>
@@ -41,7 +42,7 @@ const renderItem = ({ item, index }) => {
     );
 };
 
-const Drawer = React.memo((props: { setShowMenu: (arg0: boolean) => void; }) => {
+const Drawer = React.memo((props) => {
     console.log('Drawer is rendered');
 
     return (
@@ -63,9 +64,12 @@ const Drawer = React.memo((props: { setShowMenu: (arg0: boolean) => void; }) => 
                     keyExtractor={(item, index) => index.toString()}
                 />
 
-                <TouchableOpacity style={styles.LogoutBox}>
+                <TouchableOpacity 
+                    style={styles.LogoutBox}
+                    onPress={() => {
+                        signOutFromGoogle(props);
+                    }}>
                     <View>
-                        {/* <AntDesign name="logout" size={width / 16.3} color="white" /> */}
                         <Image style={{height:width / 16,width:width / 16}} source={require('../../assets/images/logout1.png')}/>
                     </View>
                     <View>

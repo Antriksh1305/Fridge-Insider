@@ -21,7 +21,7 @@ import LoadingModal from '../../components/shared/LoadingModal';
 // Firebase
 import auth from '@react-native-firebase/auth';
 import { handleLogin } from '../../Firebase/FirebaseLogin';
-import { signInWithGoogle, signOutFromGoogle } from '../../Firebase/FirebaseGoogleAuth';
+import { signInWithGoogle } from '../../Firebase/FirebaseGoogleAuth';
 
 export default function Login(props) {
       const [email, onChangeEmail] = useState('');
@@ -48,8 +48,7 @@ export default function Login(props) {
       useEffect(() => {
             if (!initializing && user && emailVerified) {
                   console.log('User is signed in......Currently in Login Screen UseEffect');
-                  props.changeScreen('Location'); // Change it to screen you want to render after succesful Login
-                  // signOutFromGoogle();  // Calling only for development and debugging purpose
+                  props.changeScreen('Location');
             }
       });
 

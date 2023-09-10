@@ -8,7 +8,7 @@ import ProvideLocation from '../screens/Location/ProvideLocation';
 import Main_home from '../screens/Homepage/Main_home';
 
 export default function ScreenNavigator() {
-      const [screen, changeScreen] = useState('MainHome');
+      const [screen, changeScreen] = useState('AuthenticationPage');
 
       const screenComponents = {
             GetStarted: <Index changeScreen={changeScreen} />,

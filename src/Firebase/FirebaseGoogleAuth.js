@@ -37,13 +37,15 @@ export const signInWithGoogle = async (changeScreen, setLoadingModalVisible) => 
     }
 };
 
-export const signOutFromGoogle = async () => {
+export const signOutFromGoogle = async (props) => {
     try {
         // Sign out from Firebase Authentication
         await auth().signOut();
 
         // Sign out from Google Sign-In
         await GoogleSignin.signOut();
+        console.log('Signed out from Google');
+        props.changeScreen('AuthenticationPage');
     } catch (error) {
         console.log('Error signing out:', error);
     }
