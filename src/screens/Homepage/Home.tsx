@@ -12,6 +12,9 @@ import Expired from '../../components/Home/Expired';
 import Factoid from '../../components/Home/Factoid';
 import Pagination from '../../components/Home/Pagination';
 
+import auth from '@react-native-firebase/auth';
+import db from '@react-native-firebase/database';
+
 const width = Screen.SCREEN_WIDTH;
 const height = Screen.SCREEN_HEIGHT;
 
@@ -24,14 +27,42 @@ let fact_data = [
 ]
 
 const Home = (props: { showMenu: any; }) => {
-    const [profile, setProfile] = useState(false);
-    const [name, setname] = useState('Sajal ');
+    const [profile, setProfile] = useState(null);
+    const [name, setName] = useState('Sajal ');
     const [temp, setTemp] = useState('');
     const [data1, setData1] = useState([]);
     const [switching, setSwitching] = useState('1');
 
     useEffect(() => {
         setData1(menus);
+    }, []);
+
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = auth().onAuthStateChanged((user) => {
+            if (user) {
+                setCurrentUser(user);
+                const userId = user.uid;
+
+                db().ref(`users/${userId}`).once('value')
+                    .then((snapshot) => {
+                        const userData = snapshot.val();
+                        setName(userData.displayName.slice(0, userData.displayName.indexOf(' ')));
+                        if (userData.profilePictureURL){
+                            setProfile(userData.profilePictureURL);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching user data:', error);
+                    });
+            } else {
+                // User is signed out.
+                setCurrentUser(null);
+            }
+        });
+
+        return () => unsubscribe(); // Cleanup the subscription when the component unmounts.
     }, []);
 
     // Pagination functions
@@ -83,7 +114,11 @@ const Home = (props: { showMenu: any; }) => {
                         }
                     }}>
                     <View style={styles.profileAvatar}>
-                        {profile ? <Image source={require('../../../assets/images/tomato.png')} style={{ width: 40, height: 40 }} /> : <Svginserter tag={'UserProfileDefault'} width={30} height={30} />}
+                        {profile !== null ? (
+                            <Image source={{ uri: profile }} style={{ width: 40, height: 40, borderRadius: 30 }} />
+                        ) : (
+                            <Svginserter tag={'UserProfileDefault'} width={30} height={30} />
+                        )}
                     </View>
                 </MotiPressable>
             </MotiView>

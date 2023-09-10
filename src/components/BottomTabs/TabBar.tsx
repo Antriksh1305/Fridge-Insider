@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Pressable, Dimensions, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { MotiView } from 'moti';
 import { MotiPressable } from 'moti/interactions';
 import NavigationIcon from './NavigationIcon';
