@@ -10,7 +10,7 @@ export const handlePasswordReset = (email, setEmail, setError, setSuccess, setLo
 
         auth().sendPasswordResetEmail(email)
             .then(() => {
-                console.log('Password reset email sent');
+                // console.log('Password reset email sent');
                 setEmail('');
                 setError('Password Reset Email Sent');
                 setSuccess(true);
@@ -23,7 +23,7 @@ export const handlePasswordReset = (email, setEmail, setError, setSuccess, setLo
                 } else {
                     setError('An error occurred during registration.');
                 }
-                console.log('Error sending password reset email:', error);
+                // console.log('Error sending password reset email:', error);
             })
             .finally(() => {
                 setLoadingModalVisible(false); // Hide the loader

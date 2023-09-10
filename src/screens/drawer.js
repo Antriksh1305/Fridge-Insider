@@ -18,14 +18,14 @@ const drawer_list = [
 ];
 
 const renderItem = ({ item, index }) => {
-    console.log('Drawer Item is rendered');
+    // console.log('Drawer Item is rendered');
     return (
         <View style={styles.ListItemContent}>
             <TouchableOpacity
                 activeOpacity={0.45}
                 style={styles.ListItem}
                 onPress={() => {
-                    console.log(item.title + ' Btn is clicked');
+                    // console.log(item.title + ' Btn is clicked');
                 }}
             >
                 <View>
@@ -43,7 +43,7 @@ const renderItem = ({ item, index }) => {
 };
 
 const Drawer = React.memo((props) => {
-    console.log('Drawer is rendered');
+    // console.log('Drawer is rendered');
 
     return (
         <View style={styles.container}>

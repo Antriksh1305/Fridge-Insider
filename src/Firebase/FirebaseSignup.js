@@ -6,14 +6,14 @@ export const createProfile = async (response, name, email) => {
     const { user } = response;
     const { uid, photoURL } = user;
     const displayName = name;
-    console.log(user);
+    // console.log(user);
     await db().ref(`/users/${uid}`).set({ displayName, email, photoURL, uid });
 };
 
 export const registerUserWithEmailAndPassword = async (email, password) => {
     try {
         const response = await auth().createUserWithEmailAndPassword(email, password);
-        console.log('User account created & signed in!');
+        // console.log('User account created & signed in!');
         return response;
     } catch (error) {
         throw error;
@@ -24,7 +24,7 @@ export const sendEmailVerification = async (user,setError) => {
     try {
         if (user) {
             await user.sendEmailVerification();
-            console.log('Email verification sent');
+            // console.log('Email verification sent');
         } else {
             throw new Error('User object is null or undefined');
         }
@@ -80,7 +80,7 @@ export const handleSignup = async (email, password, name, confirmPass, setName, 
                     setError('An error occurred during registration.');
                 }
                 setLoading(false); // Stop loader
-                console.error(error);
+                // console.error(error);
             }
         } else {
             setError('Password and Confirm Password do not match');

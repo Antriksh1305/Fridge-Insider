@@ -14,7 +14,7 @@ const TabBar = ({ state, descriptors, navigation }: any) => {
       const [tab, setTab] = useState('Home');
       const [wrap, setWrap] = useState(true);
       const [wrapAnim, setWrapAnim] = useState(true);
-      console.log(wrap, wrapAnim);
+    //   console.log(wrap, wrapAnim);
       return (
             <View>
                   <MotiView style={[styles.mainContainer, !wrapAnim ? { shadowColor: Colors.black, elevation: 6 } : { width: 10 }]}

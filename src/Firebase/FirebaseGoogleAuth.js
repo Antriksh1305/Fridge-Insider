@@ -30,7 +30,7 @@ export const signInWithGoogle = async (changeScreen, setLoadingModalVisible) => 
         }
         return response.user;
     } catch (error) {
-        console.log('Error signing in with Google:', error);
+        // console.log('Error signing in with Google:', error);
         throw error;
     } finally {
         setLoadingModalVisible(false);
@@ -44,9 +44,9 @@ export const signOutFromGoogle = async (props) => {
 
         // Sign out from Google Sign-In
         await GoogleSignin.signOut();
-        console.log('Signed out from Google');
+        // console.log('Signed out from Google');
         props.changeScreen('AuthenticationPage');
     } catch (error) {
-        console.log('Error signing out:', error);
+        // console.log('Error signing out:', error);
     }
 };

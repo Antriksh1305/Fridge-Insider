@@ -12,11 +12,11 @@ const width = Screen.SCREEN_WIDTH;
 const Recent = ()=> {
   const [gdata,setGdata] = useContext(Data1);
   const [data1,setData] = useState([]);
-  console.log(gdata);
+//   console.log(gdata);
   useEffect(() => {
     let tempdata = [];
     gdata.map((item)=> {
-    console.log(Date.now() - item.id);
+    // console.log(Date.now() - item.id);
     if (Date.now() - item.id <= 86400000){
       tempdata.push(item);
     }

@@ -15,14 +15,14 @@ const Expired = ()=> {
   useEffect(() => {
     let tempdata = [];
     gdata.map((item)=> {  
-      console.log(item.expire*86400000 - (Date.now()-item.id));  
+      // console.log(item.expire*86400000 - (Date.now()-item.id));  
       if(item.expire*86400000 - (Date.now()-item.id) < 0){
       tempdata.push(item);
-      console.log(item);
+      // console.log(item);
     }
     })
     setData(tempdata);
-    console.log(data1);
+    // console.log(data1);
 }, [gdata]);
   
    return (
